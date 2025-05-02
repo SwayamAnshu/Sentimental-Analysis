@@ -208,106 +208,106 @@ Raw Tweets (CSV)
 
 🚀 Full Project Workflow
 1. Data Collection & Loading
-Source: train.csv and test.csv containing tweet text and sentiment labels.
+-Source: train.csv and test.csv containing tweet text and sentiment labels.
 
 Format:
 
-Columns: text, label
+-Columns: text, label
 
-Labels: 0 (negative), 1 (neutral), 2 (positive)
+-Labels: 0 (negative), 1 (neutral), 2 (positive)
 
 2. Data Preprocessing
 Text Cleaning:
 
-Remove HTML tags
+-Remove HTML tags
 
-Remove special characters and punctuation
+-Remove special characters and punctuation
 
-Convert text to lowercase
+-Convert text to lowercase
 
 Tokenization:
 
-Use Tokenizer from Keras to convert text into integer sequences.
+-Use Tokenizer from Keras to convert text into integer sequences.
 
 Padding:
 
-Pad sequences to a maximum length (e.g., 100 tokens).
+-Pad sequences to a maximum length (e.g., 100 tokens).
 
 Label Encoding:
 
-Convert categorical labels (0,1,2) into one-hot encoded vectors.
+-Convert categorical labels (0,1,2) into one-hot encoded vectors.
 
 Split:
 
-Split dataset into train and validation sets.
+-Split dataset into train and validation sets.
 
 3. Embedding Layer
 Pre-trained Embeddings:
 
-Load GloVe (Global Vectors) embeddings (glove.6B.100d.txt).
+-Load GloVe (Global Vectors) embeddings (glove.6B.100d.txt).
 
 Embedding Matrix:
 
-Create an embedding matrix matching each word index to its GloVe vector.
+-Create an embedding matrix matching each word index to its GloVe vector.
 
 Embedding Layer:
 
-Use this matrix in a non-trainable Keras Embedding layer.
+-Use this matrix in a non-trainable Keras Embedding layer.
 
 4. Model Building
-Choose one or multiple architectures:
+-Choose one or multiple architectures:
 
 ✅ Simple Neural Network (SNN)
-Embedding → Flatten → Dense → Dropout → Dense (Softmax)
+-Embedding → Flatten → Dense → Dropout → Dense (Softmax)
 
 ✅ Convolutional Neural Network (CNN)
-Embedding → Conv1D → GlobalMaxPooling1D → Dense → Dropout → Dense (Softmax)
+-Embedding → Conv1D → GlobalMaxPooling1D → Dense → Dropout → Dense (Softmax)
 
 ✅ Long Short-Term Memory (LSTM)
-Embedding → LSTM → Dense → Dropout → Dense (Softmax)
+-Embedding → LSTM → Dense → Dropout → Dense (Softmax)
 
 5. Model Compilation
-Loss: categorical_crossentropy
+-Loss: categorical_crossentropy
 
-Optimizer: adam
+-Optimizer: adam
 
-Metrics: accuracy
+-Metrics: accuracy
 
 6. Training
-Train model using the fit() function.
+-Train model using the fit() function.
 
-Use EarlyStopping or ModelCheckpoint if needed.
+-Use EarlyStopping or ModelCheckpoint if needed.
 
 7. Evaluation
-Evaluate model on validation and test sets.
+-Evaluate model on validation and test sets.
 
 Metrics:
 
-Accuracy
+-Accuracy
 
-Precision, Recall, F1-Score (via classification_report)
+-Precision, Recall, F1-Score (via classification_report)
 
-Confusion Matrix
+-Confusion Matrix
 
-Visualizations:
+-Visualizations:
 
-Training vs Validation Accuracy/Loss
+-Training vs Validation Accuracy/Loss
 
-Confusion Matrix Heatmap
+-Confusion Matrix Heatmap
 
 8. Inference
-Load saved model.
+-Load saved model.
 
-Pass new tweet(s) through the preprocessing pipeline.
+-Pass new tweet(s) through the preprocessing pipeline.
 
-Predict sentiment: negative, neutral, or positive.
+-Predict sentiment: negative, neutral, or positive.
 
 9. Export & Deployment (Optional)
-Save model using .h5 or .pb
+-Save model using .h5 or .pb
 
-Create an API using Flask or FastAPI
+-Create an API using Flask or FastAPI
 
-Deploy on a server or frontend app
+-Deploy on a server or frontend app
 
 
 
