@@ -127,46 +127,78 @@ Raw Tweets (CSV)
 1. Simple Neural Network (SNN)
 
   Input (100 tokens)
+  
       │
+      
 [ Embedding Layer (GloVe) ]
+
       │
+      
 [ Flatten ]
+
       │
+      
 [ Dense (128) + ReLU ]
+
       │
+      
 [ Dropout (0.5) ]
+
       │
+      
 [ Dense (3) + Softmax ]
 
 
 2. Convolutional Neural Network (CNN)
 
   Input (100 tokens)
+  
       │
+      
 [ Embedding Layer (GloVe) ]
+
       │
+      
 [ Conv1D (128 filters, kernel=5) ]
+
       │
+      
 [ GlobalMaxPooling1D ]
+
       │
+      
 [ Dense (128) + ReLU ]
+
       │
+      
 [ Dropout (0.5) ]
+
       │
+      
 [ Dense (3) + Softmax ]
 
 
 3. Long Short-Term Memory (LSTM)
 
   Input (100 tokens)
+  
       │
+      
 [ Embedding Layer (GloVe) ]
+
       │
+      
 [ LSTM (128 units) ]
+
       │
+      
 [ Dense (128) + ReLU ]
+
       │
+      
 [ Dropout (0.5) ]
+
       │
+      
 [ Dense (3) + Softmax ]
 
