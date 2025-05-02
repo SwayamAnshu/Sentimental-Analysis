@@ -13,12 +13,18 @@ We utilize pre-trained GloVe word embeddings for word representation and analyze
 
 .
 ├── data/
+
 │ └── file.csv # Labeled tweet dataset
+
 ├── embeddings/
 │ └── glove.6B.100d.txt # Pretrained GloVe vectors
+
 ├── embedding_matrix.csv # Extracted embedding matrix for model training
+
 ├── sentiment_analysis.py # Main training and evaluation script
+
 ├── requirements.txt # Required Python packages
+
 └── README.md # Project documentation
 
 
